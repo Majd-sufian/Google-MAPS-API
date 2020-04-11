@@ -16,8 +16,14 @@
 
 8- style the individual store --Done
 
-9- show all the stores in the stores list based on reall world data 
+9- show all the stores in the stores list based on reall world data --Done
 
-10- show the info  window when you click on the individual store 
+10- show the info  window when you click on the individual store --Done
 
 11- Add a beutufil transition on the hover of the individual store	
+
+12- Make the stores list interactive with the map
+
+13- Allow the user to search for stores with a zip code
+
+

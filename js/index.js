@@ -203,8 +203,18 @@ function initMap() {
 
 
   });
+  displayStores()
   showStoresMarkers()
+  setOnClickListner()
 }
+
+// 1- i need to create a new function called setOnClickListner
+// 2- i need to get all the .stores-list-container
+// loop over them with forEach
+// add eventListener for the elements
+// google.maps.event.trigger(markers[index], click)
+
+function setOnClickListner
 
 
 function displayStores(){
@@ -228,6 +238,7 @@ function displayStores(){
 }
 
 
+
 function showStoresMarkers() {
  // 1- loooping over the stores
  // 2- call the function createMarker inside it
@@ -242,17 +253,33 @@ for (var [index,store] of stores.entries()){
 		  store['coordinates']['latitude'],
 		  store['coordinates']['longitude'])
 		var name = store.name 
+		var openStatusText = store.openStatusText
+		var phoneNumber = store.phoneNumber
 		var address = store['addressLines'][0]
 		bounds.extend(latlng);
-		createMarker(latlng, name, address, index+1)
+		createMarker(latlng, name, address, index+1, openStatusText, phoneNumber)
 		}
     map.fitBounds(bounds);
 }
 
 
 
-function createMarker(latlng, name, address, index) {
-  var html = "<b>" + name + "</b> <br/>" + address;
+function createMarker(latlng, name, address, index, openStatusText, phoneNumber) {
+  // var html = "<b style='color: red'" + name + "</b> <br/>" + address;
+  var html = `
+	<div class="store-name-window">${name}</div>
+	<div class="store-opening-hours">${openStatusText}</div>
+	<hr>
+	<div class="store-address-window-container">
+		<div class="address-icon"><i class="fas fa-location-arrow"></i></div>
+		<div class="store-address-window">${address}</div>
+	</div>
+	<div class="store-opening-hours-window-container">
+		<div class="hours-icon"><i class="fas fa-phone-alt"></i></div>
+		<div class="store-opening-hours-window">${phoneNumber}</div>
+	</div>	
+
+  `
   console.log(html)
   var marker = new google.maps.Marker({
     map: map,

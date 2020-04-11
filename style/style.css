@@ -109,3 +109,30 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.store-name-window {
+    color: red;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.store-opening-hours {
+	font-size: 16px;
+	margin: 10px;
+    margin-left: 0;
+}
+
+.store-address-window-container, .store-opening-hours-window-container {
+	display: flex;
+}
+
+.store-address-window, .store-opening-hours-window{
+    margin: 10px;
+    margin-top: 0;
+}
+
+.fas {
+    color: #363062;
+    font-weight: 900;
+    font-size: large;
+}   
