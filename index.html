@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GOOGLE MAPS</title>
+	<link rel="stylesheet" href="style/style.css">
+	<script src="https://kit.fontawesome.com/c939d0e917.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+
+	<div class="title">Store Locator</div>
+
+	<div class="search-container">
+		<div class="search">
+			<input type="text" id="zip-code-input" placeholder="Enter zip">
+			<i class="fas fa-search fa-flip-horizontal" id="search"></i></a>
+		</div>
+
+	</div>
+
+	<div class="stores-list-container">
+		<div class="stores-list"> 
+			<div class="store-address-number">
+				<div class="store-address">8480 Baverly Blad <br>Los Angeles, CA 90048</div>
+				<div class="store-circle">1</div>
+			</div>
+			<div class="store-phone-number">054-32-145-643</div>
+		</div>
+
+			
+	</div>
+
+	<div class="map-marker">
+		<i class="fas fa-map-marker"></i>
+		<i class="fas fa-map-marker"></i>
+		<i class="fas fa-map-marker"></i>
+	</div>
+
+
+	<div id="map"></div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcwazb-T7zvceyA4VLWVB-eXvwj-XEUIA&callback=initMap">
+    </script>
+	<script src="js/store-data.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
