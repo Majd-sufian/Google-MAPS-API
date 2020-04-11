@@ -81,6 +81,7 @@ body {
     margin-top: 28px;
     height: 100px;
     border-bottom: 1px solid #333;
+    cursor: pointer;
 }
 
 .store-phone-number {

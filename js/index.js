@@ -200,9 +200,10 @@ function initMap() {
     ]
   }
 ]
-
+													
 
   });
+  infoWindow = new google.maps.InfoWindow()
   displayStores()
   showStoresMarkers()
   setOnClickListner()
@@ -214,9 +215,16 @@ function initMap() {
 // add eventListener for the elements
 // google.maps.event.trigger(markers[index], click)
 
-function setOnClickListner
-
-
+function setOnClickListner() {
+	var storeElements = document.querySelectorAll('.stores-list')
+	storeElements.forEach(function(elem, index){
+		console.log(elem.length)
+		elem.addEventListener('click', function(){
+			new google.maps.event.trigger(markers[index], 'click')
+		})
+	})
+}
+ 
 function displayStores(){
 	var storesHtml = ''
 	// i used var [index, store] to get the index num 
@@ -280,8 +288,7 @@ function createMarker(latlng, name, address, index, openStatusText, phoneNumber)
 	</div>	
 
   `
-  console.log(html)
-  var marker = new google.maps.Marker({
+	  var marker = new google.maps.Marker({
     map: map,
     position: latlng,
     label: index.toString()
