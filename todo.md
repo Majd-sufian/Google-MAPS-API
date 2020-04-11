@@ -1,12 +1,29 @@
 # Plan Of Action
 
-- Complete the styling for the marker info window DONE
+1- create a Wirefarme --DONE
 
-- Open the info window marker on store selection in stores list DONE
+2- Set up the base HTML structure --Done
 
-- Allow a user to search for the stores in a zip code DONE
+3- Import Google Maps into the Window --DONE
 
-- Add a beautiful transition on the hover of an individual store DONE
+4- Add the text store Locater --DONE
 
-**DONE**
+5- add input Box --Done
+
+6- Add the  Store List Container --Done
+
+7- Add individual Store Container --Done
+
+8- style the individual store --Done
+
+9- show all the stores in the stores list based on reall world data --Done
+
+10- show the info  window when you click on the individual store --Done
+
+11- Add a beutufil transition on the hover of the individual store --Done
+
+12- Make the stores list interactive with the map --Done
+
+13- Allow the user to search for stores with a zip code
+
 
