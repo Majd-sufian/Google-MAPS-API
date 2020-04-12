@@ -24,6 +24,22 @@
 
 12- Make the stores list interactive with the map --Done
 
-13- Allow the user to search for stores with a zip code
+13- Allow the user to search for stores with a zip code --Done
+
+--------------------------------------------------------------------
+
+1- fetch the summery api to get all the cases
+
+2- fetch the country api to get the lat and lon
+
+3- pass the country name and the total cases in this country 
+
+4- create the marker 
+
+5- get the lat and log from the api 
+
+<!-- 6-  -->
+
+
 
 

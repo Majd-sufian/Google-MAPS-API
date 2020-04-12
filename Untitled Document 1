@@ -1,0 +1,21 @@
+1 - use the api https://api.covid19api.com/summary
+
+2- fetch the url
+
+3- get all the elements
+
+4- get lat and lon and cases and date 
+
+5- use moment.js to convert the date 
+ 
+ -------------------------------------------'
+
+6- chnage the title 
+
+7- add the countries list https://gist.github.com/incredimike/1469814
+
+8- loop over it get the country name 
+
+9- use it with the api where's counrt == ---
+
+
