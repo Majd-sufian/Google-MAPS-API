@@ -1,4 +1,5 @@
 window.onload = function() {
+  // fetchUrl()
 }
 
 var requestOptions = {
@@ -6,42 +7,36 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.covid19api.com/summary", requestOptions)
-  .then(response => response.json())
-  .then(data =>  allData(data))
+fetch("https://api.covid19api.com/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
   .catch(error => console.log('error', error));
 
-const allData = (data)  => {
-  var globalData = data.Global
-  buildGlobalData(globalData)
-  var contriesData = data.Countries
-  // console.log(contriesData)
-  buildContriesData(contriesData)
-}
-
-const buildGlobalData = (data) => {
-  // console.log(data)
-}
-
-const buildContriesData = (contries) => {
-  for(var [index, country] of contries.entries()){
-    var z = country.Country
-    getCoordination(z)
-
-  }
-}
 
 
-const getCoordination = (country) => {
-    fetch(`https://api.covid19api.com/country/${country}/status/confirmed`,
-    requestOptions) .then(response => response.json()) .then(result =>
-    x(result[0])) .catch(error => console.log('error', error));
-    const x = (result) => {
-      var lat = result["Lat"]
-      var lon = result["Lon"]
-    }
-    return x
-}
+
+// const allData = (data)  => {
+//   console.log('dd')
+//   var globalData = data.Global
+//   buildGlobalData(globalData)
+//   var contriesData = data.Countries
+
+//   displayCountries(contriesData)
+// }
+
+// const buildGlobalData = (data) => {
+//   console.log(data)
+// }
+
+// const buildContriesData = (contries) => {
+//   for(var [index, country] of contries.entries()){
+//     var z = country.Country
+//     getCoordination(z)
+
+//   }
+// }
+
+
 
 
 
@@ -61,6 +56,7 @@ function initMap() {
         mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
     });
     infoWindow = new google.maps.InfoWindow();
+    displayCountries(foundStores);
     searchStores();
 }
 
@@ -78,7 +74,7 @@ function searchStores(){
         foundStores = stores;
     }
     clearLocations();
-    displayStores(foundStores);
+    displayCountries(foundStores);
     showStoresMarkers(foundStores);
     setOnClickListener();
 }
@@ -100,12 +96,12 @@ function setOnClickListener(){
     })
 }
 
-function displayStores(stores){
-    var storesHtml = '';
-    for(var [index, store] of stores.entries()){
-        var address = store['addressLines'];
-        var phone = store['phoneNumber'];
-        storesHtml += `
+function displayCountries(contriesData){
+  console.log(contriesData)
+    var contriesDataHtml = '';
+    for(var [index, country] of contriesData.entries()){
+      var countryName = contriesData.Country
+        contriesDataHtml += `
             <div class="store-container">
                 <div class="store-container-background">
                     <div class="store-info-container">
@@ -123,7 +119,7 @@ function displayStores(stores){
                 </div>
             </div>
         `
-        document.querySelector('.stores-list').innerHTML = storesHtml;
+        document.querySelector('.stores-list').innerHTML = contriesDataHtml;
     }
 }
 
